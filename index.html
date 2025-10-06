@@ -2,580 +2,646 @@
 <html lang="ru">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Group-59</title>
-  <link rel="icon" type="image/png" href="./efe5c5d0-3379-4f89-a082-6ed829ea0a80_removalai_preview.png">
-  <meta name="59-guruh-ma'lumotlar.uz" content="59-guruh-ma'lumotlar.uz">
-  <style>
-    :root {
-      --bg: #0b0b0c;
-      --card: #0f1720;
-      --accent: #1e90ff;
-      --muted: #9aa4b2;
-      --glass: rgba(255, 255, 255, 0.03);
-      --success: #22c55e;
-      --danger: #ef4444;
-      --radius: 14px;
-      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-    }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Group-59</title>
+    <link rel="icon" type="image/png" href="./efe5c5d0-3379-4f89-a082-6ed829ea0a80_removalai_preview.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #0b0b0c;
+            --card: #0f1720;
+            --accent: #1e90ff;
+            --muted: #9aa4b2;
+            --glass: rgba(255, 255, 255, 0.03);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --radius: 14px;
+            font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+        }
 
-    /* === Изменил только это: чтобы страница не центрировалась по вертикали и нормально скроллилась === */
-    html,
-    body {
-      height: auto;
-      min-height: 100%;
-    }
+        html,
+        body {
+            height: auto;
+            min-height: 100%;
+        }
 
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #050506 0%, #0b0b0c 100%);
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding: 16px;
-      display: flex;
-      justify-content: center;
-      /* оставил горизонтальное центрирование */
-      /* убрал align-items:center; — теперь верх не прячется */
-    }
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #050506 0%, #0b0b0c 100%);
+            color: #e6eef8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+        }
 
-    /* ============================================================================================ */
 
-    .app {
-      width: 100%;
-      max-width: 460px;
-      min-height: 640px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.25));
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
+        .app {
+            width: 100%;
+            max-width: 460px;
+            min-height: 640px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.25));
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
 
-    header {
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(90deg, rgba(30, 144, 255, 0.06), transparent);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(4px);
-    }
+        header {
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, rgba(30, 144, 255, 0.06), transparent);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(4px);
+        }
 
-    .logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #0ea5e9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #021226;
-      box-shadow: 0 6px 18px rgba(30, 144, 255, 0.09);
-      font-size: 18px;
-    }
+        .logo {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #021226;
+            box-shadow: 0 6px 18px rgba(30, 144, 255, 0.09);
+            font-size: 18px;
+        }
 
-    .title {
-      font-weight: 700;
-      font-size: 16px;
-    }
+        .title {
+            font-weight: 700;
+            font-size: 16px;
+        }
 
-    .subtitle {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+        .subtitle {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
 
-    .content {
-      padding: 16px;
-      flex: 1;
-      overflow: auto;
-    }
+        .content {
+            padding: 16px;
+            flex: 1;
+            overflow: auto;
+        }
 
-    .card {
-      background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.02));
-      border-radius: var(--radius);
-      padding: 12px;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.02);
-    }
+        .card {
+            background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.02));
+            border-radius: var(--radius);
+            padding: 12px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+        }
 
-    .center {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      height: 100%;
-    }
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            height: 100%;
+        }
 
-    input[type="password"],
-    input[type="text"],
-    textarea,
-    select {
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      background: var(--glass);
-      color: inherit;
-      font-size: 15px;
-      outline: none;
-    }
+        input[type="password"],
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: var(--glass);
+            color: inherit;
+            font-size: 15px;
+            outline: none;
+        }
 
-    button {
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 0;
-      font-weight: 700;
-      font-size: 15px;
-      cursor: pointer;
-      background: var(--accent);
-      color: #021226;
-    }
+        button {
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 0;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            background: var(--accent);
+            color: #021226;
+        }
 
-    .ghost {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      color: var(--muted);
-    }
+        .ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+        }
 
-    nav.bottom {
-      display: flex;
-      gap: 6px;
-      padding: 10px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
-      border-top: 1px solid rgba(255, 255, 255, 0.02);
-    }
+        nav.bottom {
+            display: flex;
+            gap: 6px;
+            padding: 10px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
 
-    .tab {
-      flex: 1;
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: 700;
-      font-size: 13px;
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.01);
-    }
+        .tab {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 13px;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.01);
+        }
 
-    .tab.active {
-      background: linear-gradient(90deg, var(--accent), #0ea5e9);
-      color: #021226;
-    }
+        .tab.active {
+            background: linear-gradient(90deg, var(--accent), #0ea5e9);
+            color: #021226;
+        }
 
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 12px;
-    }
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px;
+        }
 
-    .row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.02);
-    }
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+        }
 
-    .avatar {
-      width: 54px;
-      height: 54px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #111827, #0f1720);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: var(--muted);
-    }
+        .row.today {
+            /* если сегодня — чуть другой фон, но мы ещё подкрашиваем элементы в JS */
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.03);
+        }
 
-    .meta {
-      flex: 1;
-    }
+        .avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #111827, #0f1720);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--muted);
+        }
 
-    .muted {
-      font-size: 13px;
-      color: var(--muted);
-    }
+        .meta {
+            flex: 1;
+        }
 
-    .small {
-      font-size: 13px;
-      padding: 8px;
-      border-radius: 10px;
-    }
+        .muted {
+            font-size: 13px;
+            color: var(--muted);
+        }
 
-    .danger {
-      background: rgba(239, 68, 68, 0.12);
-      color: var(--danger);
-    }
+        .small {
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 10px;
+        }
 
-    @media(min-width:720px) {
-      body {
-        background: #08101a;
-        padding: 40px;
-      }
+        .danger {
+            background: rgba(239, 68, 68, 0.12);
+            color: var(--danger);
+        }
 
-      .app {
-        max-width: 800px;
-        min-height: 720px;
-      }
+        @media(min-width:720px) {
+            body {
+                background: #08101a;
+                padding: 40px;
+            }
 
-      .content {
-        padding: 24px;
-      }
-    }
+            .app {
+                max-width: 800px;
+                min-height: 720px;
+            }
 
-    .file {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: space-between;
-      padding: 8px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.01);
-    }
+            .content {
+                padding: 24px;
+            }
+        }
 
-    .badge {
-      padding: 6px 8px;
-      border-radius: 8px;
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.02);
-    }
+        .file {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: space-between;
+            padding: 8px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.01);
+        }
 
-    .hint {
-      font-size: 12px;
-      color: var(--muted);
-    }
+        .badge {
+            padding: 6px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.02);
+        }
 
-    .top-actions {
-      display: flex;
-      gap: 8px;
-    }
+        .hint {
+            font-size: 12px;
+            color: var(--muted);
+        }
 
-    .center-text {
-      text-align: center;
-      color: var(--muted);
-      padding: 8px 6px;
-      font-size: 13px;
-    }
+        .top-actions {
+            display: flex;
+            gap: 8px;
+        }
 
-    .readonly-overlay {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 8px;
-      text-align: center;
-    }
+        .center-text {
+            text-align: center;
+            color: var(--muted);
+            padding: 8px 6px;
+            font-size: 13px;
+        }
 
-    .hidden {
-      display: none !important;
-    }
+        .readonly-overlay {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 8px;
+            text-align: center;
+        }
 
-    .salomjalla {
-      width: 190px;
-    }
-  </style>
+        .hidden {
+            display: none !important;
+        }
+
+        .salomjalla {
+            width: 190px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="app" id="app">
-    <header>
-      <div class="logo"><img style="width: 90px; margin-top: 5px;"
-          src="./efe5c5d0-3379-4f89-a082-6ed829ea0a80_removalai_preview.png" alt=""></div>
-      <div style="flex:1">
-        <div class="title">59-Guruh</div>
-        <div class="subtitle">Mobil versiya - faqat ko'rish</div>
-      </div>
-      <div id="lockIcon" class="hint" style="font-size:12px">🔒</div>
-    </header>
-
-    <main class="content" id="main">
-      <!-- LOGIN -->
-      <div id="loginScreen" class="center">
-        <div style="width:100%;max-width:360px">
-          <div class="card" style="text-align:center">
-            <h2 style="margin:0 0 8px 0">Parol orqali kirish</h2>
-            <p class="muted" style="margin:0 0 12px 0">Guruh ma'lumotlarini ko'rish uchun **** parolni kiriting.</p>
-            <form id="codeForm">
-              <input id="codeInput" type="password" placeholder="Parol kiritish" autocomplete="off" />
-              <div style="height:10px"></div>
-              <button type="submit">Kirish</button>
-            </form>
-            <div style="height:8px"></div>
-            <div class="hint">Sayt faqat bizning guruhimiz uchun. Tahrirlash-GitHub orqali (siz faylni yangilaysiz).
+    <div class="app" id="app">
+        <header>
+            <div class="logo"><img style="width: 90px; margin-top: 5px;"
+                    src="./group59.png" alt=""></div>
+            <div style="flex:1">
+                <div class="title">59-Guruh</div>
+                <div class="subtitle">Mobil versiya - faqat ko'rish</div>
             </div>
-          </div>
-        </div>
-        <div class="center-text"></div>
-      </div>
+            <div id="lockIcon" class="hint" style="font-size:12px">🔒</div>
+        </header>
 
-      <!-- APP -->
-      <div id="appScreen" style="display:none">
-        <div style="display:flex;gap:8px;margin-bottom:12px">
-          <div class="card" style="flex:1">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-weight:700">Kirish</div>
-                <div class="muted">Faqat bizning guruh uchun ko'rish</div>
-              </div>
-              <div style="text-align:right">
-                <div style="font-weight:800">5959</div>
-                <div class="muted" style="font-size:12px">Kirish uchun kod</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PAGES -->
-        <div id="page-schedule" class="card page">
-          <h3 style="margin:0 0 12px 0">📅 Jadval</h3>
-          <div id="scheduleList" class="list"></div>
-        </div>
-
-        <div id="page-students" class="card page" style="margin-top:12px; display:none">
-          <h3 style="margin:0 0 12px 0">👥 Talabalar</h3>
-          <div id="studentsList" class="list"></div>
-        </div>
-
-        <div id="page-author" class="card page" style="margin-top:12px; display:none">
-          <h3 style="margin:0 0 12px 0">✍️ Muallif</h3>
-          <div class="row" style="flex-direction:column;align-items:stretch;">
-            <div id="authorPhoto"
-              style="height:220px;border-radius:12px;background:linear-gradient(135deg,#0f1720,#0b1220);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-              <img class="salomjalla" src="./image.png" alt="">
-              <img id="authorImgTag" src="" alt="Фото автора"
-                style="width:100%;height:100%;object-fit:cover;display:none;">
-              <div id="authorPlaceholder" style="color:var(--muted);padding:12px;text-align:center;">
-
-              </div>
+        <main class="content" id="main">
+            <!-- LOGIN -->
+            <div id="loginScreen" class="center">
+                <div style="width:100%;max-width:360px">
+                    <div class="card" style="text-align:center">
+                        <h2 style="margin:0 0 8px 0">Parol orqali kirish</h2>
+                        <p class="muted" style="margin:0 0 12px 0">Guruh ma'lumotlarini ko'rish uchun **** parolni
+                            kiriting.</p>
+                        <form id="codeForm">
+                            <input id="codeInput" type="password" placeholder="Parol kiritish" autocomplete="off" />
+                            <div style="height:10px"></div>
+                            <button type="submit">Kirish</button>
+                        </form>
+                        <div style="height:8px"></div>
+                        <div class="hint">Sayt faqat bizning guruhimiz uchun. Tahrirlash-GitHub orqali (siz faylni
+                            yangilaysiz).
+                        </div>
+                    </div>
+                </div>
+                <div class="center-text"></div>
             </div>
 
-            <div style="padding:12px 6px 0 6px">
-              <div style="font-weight:700">Jo'rabek (Henry)</div>
-              <div class="muted" style="margin-top:6px">
-                Men Genriman, men IT sohasida o'qiyman. Men kompyuterlarni yaxshi ko'raman, Blenderda animatsiyalar
-                yarataman va kod bilan shug'ullanaman. Men kuchli foydalanuvchiman, tartibni yaxshi ko'raman va
-                sinfimizni yanada qulayroq qilishni xohlayman - bu sayt aynan shu uchun. Agar kerak bo'lsa, men kod va
-                apparat bilan yordam berishga tayyorman.
-              </div>
+            <!-- APP -->
+            <div id="appScreen" style="display:none">
+                <div style="display:flex;gap:8px;margin-bottom:12px">
+                    <div class="card" style="flex:1">
+                        <div style="display:flex;justify-content:space-between;align-items:center">
+                            <div>
+                                <div style="font-weight:700">Kirish</div>
+                                <div class="muted">Faqat bizning guruh uchun ko'rish</div>
+                            </div>
+                            <div style="text-align:right">
+                                <div style="font-weight:800">5959</div>
+                                <div class="muted" style="font-size:12px">Kirish uchun kod</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-              <div style="margin-top:12px;display:flex;gap:8px;">
-                <a id="tgLink" class="ghost" href="https://t.me/Foodloverd" target="_blank" rel="noopener">Menga TG dan
-                  yozish</a>
-                <button id="downloadJson" class="small"
-                  style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Экспорт
-                  JSON</button>
-              </div>
+                <!-- PAGES -->
+                <div id="page-schedule" class="card page">
+                    <h3 style="margin:0 0 12px 0">📅 Jadval</h3>
+                    <div id="scheduleList" class="list"></div>
+                </div>
+
+                <div id="page-students" class="card page" style="margin-top:12px; display:none">
+                    <h3 style="margin:0 0 12px 0">👥 Talabalar</h3>
+                    <div id="studentsList" class="list"></div>
+                </div>
+
+                <div id="page-author" class="card page" style="margin-top:12px; display:none">
+                    <h3 style="margin:0 0 12px 0">✍️ Muallif</h3>
+                    <div class="row" style="flex-direction:column;align-items:stretch;">
+                        <div id="authorPhoto"
+                            style="height:220px;border-radius:12px;background:linear-gradient(135deg,#0f1720,#0b1220);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                            <img class="salomjalla" src="./image.png" alt="">
+                            <img id="authorImgTag" src="" alt="Фото автора"
+                                style="width:100%;height:100%;object-fit:cover;display:none;">
+                            <div id="authorPlaceholder" style="color:var(--muted);padding:12px;text-align:center;">
+
+                            </div>
+                        </div>
+
+                        <div style="padding:12px 6px 0 6px">
+                            <div style="font-weight:700">Jo'rabek (Henry)</div>
+                            <div class="muted" style="margin-top:6px">
+                                Men Genriman, men IT sohasida o'qiyman. Men kompyuterlarni yaxshi ko'raman, Blenderda
+                                animatsiyalar
+                                yarataman va kod bilan shug'ullanaman. Men kuchli foydalanuvchiman, tartibni yaxshi
+                                ko'raman va
+                                sinfimizni yanada qulayroq qilishni xohlayman - bu sayt aynan shu uchun. Agar kerak
+                                bo'lsa, men kod va
+                                apparat bilan yordam berishga tayyorman.
+                            </div>
+
+                            <div style="margin-top:12px;display:flex;gap:8px;">
+                                <a id="tgLink" class="ghost" href="https://t.me/Foodloverd" target="_blank"
+                                    rel="noopener">Menga TG dan
+                                    yozish</a>
+                                <button id="downloadJson" class="small"
+                                    style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">Экспорт
+                                    JSON</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-        </div>
+        </main>
 
-      </div>
-    </main>
+        <nav class="bottom" id="bottomNav" style="display:none">
+            <div class="tab active" data-tab="schedule">Jadval</div>
+            <div class="tab" data-tab="students">Talabalar</div>
+            <div class="tab" data-tab="author">Muallif</div>
+        </nav>
+    </div>
 
-    <nav class="bottom" id="bottomNav" style="display:none">
-      <div class="tab active" data-tab="schedule">Jadval</div>
-      <div class="tab" data-tab="students">Talabalar</div>
-      <div class="tab" data-tab="author">Muallif</div>
-    </nav>
-  </div>
+    <script>
+        // Single-file: только просмотр + код 5959.
+        // Данные статичные — обновляй в репо (GitHub) или редактируй тут.
+        const ACCESS_CODE = '5959';
 
-  <script>
-    // Single-file: только просмотр + код 5959.
-    // Данные статичные — обновляй в репо (GitHub) или редактируй тут.
-    const ACCESS_CODE = '5959';
+        // sample data (ты можешь заменить прямо в этом файле)
+        const sampleSchedule = [
+            { day: 'Doshanba', items: ['1:(8:30-9:50) Tarbiya Jismoniy-Tarbiya)___2:(10:00-11:20) Ingiliz-tili)___3:(11:30-12:50) Matimatika)'] },
+            { day: 'Seshanba', items: ['1:(8:30-9:50) CHQT)___2:(10:00-11:20) Ahborot Havfsizligi)___3:(11:30-12:50) Ingiliz-tili)'] },
+            { day: 'Chorshanba', items: ['1:(8:30-9:50) Tarix)___2:(10:00-11:20) Informatika va AT)___3:(11:30-12:50) Rus-tili) 4:(13:20-13:40) Ahborot Havfsizligi)'] },
+            { day: 'Payshanba', items: ['1:(8:30-9:50) Shahsiy kompyuter)___2:(10:00-11:20) Matimateka)___3:(11:30-12:50) Fizika)'] },
+            { day: 'Juma', items: ['1:(8:30-9:50) shihsiy kompyuter Arhitekturasi)___2:(10:00-11:20) shihsiy kompyuter Arhitekturasi)___3:(11:30-12:50) shihsiy kompyuter Arhitekturasi)'] },
+            { day: 'shanba', items: ['1:(8:30-9:50) Ona-tili)___2:(10:00-11:20) SHahsiy kopyuter arhitekturasi)___3:(11:30-12:50) Ingiliz-tili)'] },
+        ];
 
-    // sample data (ты можешь заменить прямо в этом файле)
-    const sampleSchedule = [
-      { day: 'Doshanba', items: ['1:(8:30-9:50) Tarbiya Jismoniy-Tarbiya)___2:(10:00-11:20) Ingiliz-tili)___3:(11:30-12:50) Matimatika)'] },
-      { day: 'Seshanba', items: ['1:(8:30-9:50) CHQT)___2:(10:00-11:20) Ahborot Havfsizligi)___3:(11:30-12:50) Ingiliz-tili)'] },
-      { day: 'Chorshanba', items: ['1:(8:30-9:50) Tarix)___2:(10:00-11:20) Informatika va AT)___3:(11:30-12:50) Rus-tili) 4:(13:20-13:40) Ahborot Havfsizligi)'] },
-      { day: 'Payshanba', items: ['1:(8:30-9:50) Shahsiy kompyuter)___2:(10:00-11:20) Matimateka)___3:(11:30-12:50) Fizika)'] },
-      { day: 'Juma', items: ['1:(8:30-9:50) shihsiy kompyuter Arhitekturasi)___2:(10:00-11:20) shihsiy kompyuter Arhitekturasi)___3:(11:30-12:50) shihsiy kompyuter Arhitekturasi)'] },
-      { day: 'shanba', items: ['1:(8:30-9:50) Ona-tili)___2:(10:00-11:20) SHahsiy kopyuter arhitekturasi)___3:(11:30-12:50) Ingiliz-tili)'] },
-    ];
+        const sampleStudents = [
+            { name: 'Jorabek', info: 'Toliq ismi: (Jorabek, Usmanov, Sheraliyevich) nomer: 94.272.30.76 yosh:17' },
+            { name: 'Olimjon', info: 'Toliq ismi: (Jumanboyev, Olimjon, Odiljon ogli) nomeri: 90.795.90.95 yosh:16' },
+            { name: 'Madina', info: 'Toliq ismi: (Ahmatjonova, Madina, Akmaljonovna) nomeri: (Malum emas) yosh:17' },
+            { name: 'Ismoil', info: 'Toliq ismi: (Anvarjonov, Ismoil, Rahimjon ogli) nomeri: 94.249.99.93 yosh:17' },
+            { name: 'Sardorbek', info: 'Toliq ismi: (Olimjonov, Sardorbek, Rustamjon ogli) nomeri: 94.156.03.01 yosh:16' },
+            { name: 'Asadullo', info: 'Toliq ismi: (Abdurasulov, Asadullo, Nuriddin ogli) nomeri: 94.177.31.05 yosh:16' },
+            { name: 'Abdurahim', info: 'Toliq ismi: (Abdurashidov, Abdurahim, Bahromjon ogli) nomeri: 93.094.21.46 yosh:16' },
+            { name: 'Xurshidbek', info: 'Toliq ismi:(Abdujabborov, Xurshidbek, Abdusattor ogli) nomeri: 33.761.01.25 yosh:16' },
+            { name: 'Otabek', info: 'Toliq ismi:(Ergashboev, Otabek, Elmurod ogli) nomeri: 88.252.06.22 yosh:16' },
+            { name: 'Elzodbek', info: 'Toliq ismi:(Erkinboyev, Elzodbek, Anvarjon ogli) nomeri: 95.099.12.59 yosh:17' },
+            { name: 'Azizbek', info: 'Toliq ismi:(Ilovitdinov, Azizbek, Orinboy ogli) nomeri: 50.525.39.09 yosh:16' },
+            { name: 'Akbarali', info: 'Toliq ismi:() nomeri: 50.076.25.56 yosh:16' },
+            { name: 'Maqsudjon', info: 'Toliq ismi:(Komiljonov, Maqsudjon, Mamurjon ogli) nomeri: 95.554.20.55 yosh:16' },
+            { name: 'Ahrorbek', info: 'Toliq ismi:(Mizrzamuhmudov, Ahrorbek, Anvarhon ogli) nomeri: (Malum emas!) yosh:16' },
+            { name: 'Azizbek', info: 'Toliq ismi:(Muhsiddinov, Azizbek, Murodjon ogli) nomeri: 95.075.03.30 yosh:' },
+            { name: 'Gulshanoy', info: 'Toliq ismi:(Nabijonov, Gulshanoy, Abdujabborovna) nomeri:(Malum emas!) yosh:16' },
+            { name: 'Elmira', info: 'Toliq ismi:(Olimjonova, Elmira, Erkinboevna) nomeri: 94.943.18.86 yosh:16' },
+            { name: 'Mashhura', info: 'Toliq ismi:(Oribjonova, Mashhura, Ikromjonovna) nomeri: 91.293.37.07 yosh:16' },
+            { name: 'Ziyoda', info: 'Toliq ismi:(Rahmonova, Ziyoda, Abdujalil qizi) nomeri:(Malum emas!) yosh:16' },
+            { name: 'Ahrorbek', info: 'Toliq ismi:(Sodiqjonov, Ahrorbek, Anvarjon ogli) nomeri:(Malum emas!)  yosh:17' },
+            { name: 'Muslima', info: 'Toliq ismi:(Turgunboyeve, Mulima, Ahmadjon qizi) nomeri:(Malum emas!) yosh:16' },
+            { name: 'Sherzodbek', info: 'Toliq ismi:(Turgunpolatov, Sherzodbek, Ilhomjon ogli) nomeri: 91.759.87.86 yosh:17' },
+            { name: 'Tolibjon', info: 'Toliq ismi:(Tursunaliyev, Tolibjon, Botiraliyevich) nomeri: 90.025.09 yosh:16' },
+            { name: 'Begzodbek', info: 'Toliq ismi:(Yusupjonov, Begzodbek, Ikromjon ogli) nomeri: 91.359.57.77 yosh:16' },
+        ];
 
-    const sampleStudents = [
-      { name: 'Jorabek', info: 'Toliq ismi: (Jorabek, Usmanov, Sheraliyevich) nomer: 94.272.30.76 yosh:17' },
-      { name: 'Olimjon', info: 'Toliq ismi: (Jumanboyev, Olimjon, Odiljon ogli) nomeri: 90.795.90.95 yosh:16' },
-      { name: 'Madina', info: 'Toliq ismi: (Ahmatjonova, Madina, Akmaljonovna) nomeri: (Malum emas) yosh:17' },
-      { name: 'Ismoil', info: 'Toliq ismi: (Anvarjonov, Ismoil, Rahimjon ogli) nomeri: 94.249.99.93 yosh:17' },
-      { name: 'Sardorbek', info: 'Toliq ismi: (Olimjonov, Sardorbek, Rustamjon ogli) nomeri: 94.156.03.01 yosh:16' },
-      { name: 'Asadullo', info: 'Toliq ismi: (Abdurasulov, Asadullo, Nuriddin ogli) nomeri: 94.177.31.05 yosh:16' },
-      { name: 'Abdurahim', info: 'Toliq ismi: (Abdurashidov, Abdurahim, Bahromjon ogli) nomeri: 93.094.21.46 yosh:16' },
-      { name: 'Islombek', info: 'Toliq ismi:(Abdurahimov, Islombek,Odiljon ogli) nomeri: (Malum emas) yosh:16' },
-      { name: 'Xurshidbek', info: 'Toliq ismi:(Abdujabborov, Xurshidbek, Abdusattor ogli) nomeri: 33.761.01.25 yosh:16' },
-      { name: 'Otabek', info: 'Toliq ismi:(Ergashboev, Otabek, Elmurod ogli) nomeri: 88.252.06.22 yosh:16' },
-      { name: 'Elzodbek', info: 'Toliq ismi:(Erkinboyev, Elzodbek, Anvarjon ogli) nomeri: 95.099.12.59 yosh:17' },
-      { name: 'Azizbek', info: 'Toliq ismi:(Ilovitdinov, Azizbek, Orinboy ogli) nomeri: 50.525.39.09 yosh:16' },
-      { name: 'Akbarali', info: 'Toliq ismi:() nomeri: 50.076.25.56 yosh:16' },
-      { name: 'Maqsudjon', info: 'Toliq ismi:(Komiljonov, Maqsudjon, Mamurjon ogli) nomeri: 95.554.20.55 yosh:16' },
-      { name: 'Barchinoy', info: '(Malumotlar yoq!)' },
-      { name: 'Ahrorbek', info: 'Toliq ismi:(Mizrzamuhmudov, Ahrorbek, Anvarhon ogli) nomeri: (Malum emas!) yosh:16' },
-      { name: 'Doniyorbek', info: '(Malum emas!)' },
-      { name: 'Jaloliddin', info: '(Malum emas!)' },
-      { name: 'Azizbek', info: 'Toliq ismi:(Muhsiddinov, Azizbek, Murodjon ogli) nomeri: 95.075.03.30 yosh:' },
-      { name: 'Gulshanoy', info: 'Toliq ismi:(Nabijonov, Gulshanoy, Abdujabborovna) nomeri:(Malum emas!) yosh:16' },
-      { name: 'Elmira', info: 'Toliq ismi:(Olimjonova, Elmira, Erkinboevna) nomeri: 94.943.18.86 yosh:16' },
-      { name: 'Mashhura', info: 'Toliq ismi:(Oribjonova, Mashhura, Ikromjonovna) nomeri: 91.293.37.07 yosh:16' },
-      { name: 'Ziyoda', info: 'Toliq ismi:(Rahmonova, Ziyoda, Abdujalil qizi) nomeri:(Malum emas!) yosh:16' },
-      { name: 'Ahrorbek', info: 'Toliq ismi:(Sodiqjonov, Ahrorbek, Anvarjon ogli) nomeri:(Malum emas!)  yosh:17' },
-      { name: 'Zebohon', info: '(Malum emas!)' },
-      { name: 'Muslima', info: 'Toliq ismi:(Turgunboyeve, Mulima, Ahmadjon qizi) nomeri:(Malum emas!) yosh:16' },
-      { name: 'Sherzodbek', info: 'Toliq ismi:(Turgunpolatov, Sherzodbek, Ilhomjon ogli) nomeri: 91.759.87.86 yosh:17' },
-      { name: 'Tolibjon', info: 'Toliq ismi:(Tursunaliyev, Tolibjon, Botiraliyevich) nomeri: 90.025.09 yosh:16' },
-    ];
+        // DOM
+        const loginScreen = document.getElementById('loginScreen');
+        const appScreen = document.getElementById('appScreen');
+        const bottomNav = document.getElementById('bottomNav');
+        const lockIcon = document.getElementById('lockIcon');
+        const codeForm = document.getElementById('codeForm');
+        const codeInput = document.getElementById('codeInput');
+        const scheduleList = document.getElementById('scheduleList');
+        const studentsList = document.getElementById('studentsList');
+        const tabs = Array.from(document.querySelectorAll('.tab'));
+        const tgLink = document.getElementById('tgLink');
+        const authorImgTag = document.getElementById('authorImgTag');
+        const authorPlaceholder = document.getElementById('authorPlaceholder');
+        const downloadJsonBtn = document.getElementById('downloadJson');
 
-    // DOM
-    const loginScreen = document.getElementById('loginScreen');
-    const appScreen = document.getElementById('appScreen');
-    const bottomNav = document.getElementById('bottomNav');
-    const lockIcon = document.getElementById('lockIcon');
-    const codeForm = document.getElementById('codeForm');
-    const codeInput = document.getElementById('codeInput');
-    const scheduleList = document.getElementById('scheduleList');
-    const studentsList = document.getElementById('studentsList');
-    const tabs = Array.from(document.querySelectorAll('.tab'));
-    const tgLink = document.getElementById('tgLink');
-    const authorImgTag = document.getElementById('authorImgTag');
-    const authorPlaceholder = document.getElementById('authorPlaceholder');
-    const downloadJsonBtn = document.getElementById('downloadJson');
-
-    // login
-    codeForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const val = codeInput.value.trim();
-      if (val === ACCESS_CODE) {
-        localStorage.setItem('g59_unlocked', '1');
-        showApp();
-      } else {
-        alert('Yana bir marta harakat qilib koring.');
-        codeInput.value = '';
-      }
-    });
-
-    if (localStorage.getItem('g59_unlocked')) {
-      showApp();
-    } else {
-      showLogin();
-    }
-
-    function showLogin() {
-      loginScreen.style.display = 'flex';
-      appScreen.style.display = 'none';
-      bottomNav.style.display = 'none';
-      lockIcon.textContent = '🔒';
-    }
-
-    function showApp() {
-      loginScreen.style.display = 'none';
-      appScreen.style.display = 'block';
-      bottomNav.style.display = 'flex';
-      lockIcon.textContent = '🔓';
-      renderAll();
-    }
-
-    // navigation
-    tabs.forEach(t => {
-      t.addEventListener('click', () => {
-        tabs.forEach(x => x.classList.remove('active'));
-        t.classList.add('active');
-        const which = t.dataset.tab;
-        showPage(which);
-      });
-    });
-
-    function showPage(which) {
-      document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
-      const el = document.getElementById('page-' + which);
-      if (el) el.style.display = 'block';
-      // scroll top
-      document.querySelector('.content').scrollTop = 0;
-    }
-
-    // render schedule
-    function loadSchedule() {
-      scheduleList.innerHTML = '';
-      sampleSchedule.forEach(block => {
-        const wrap = document.createElement('div');
-        wrap.className = 'row';
-        wrap.style.flexDirection = 'column';
-        let inner = `<div style="display:flex;justify-content:space-between;align-items:center;width:100%"><div style="font-weight:700">${escapeHtml(block.day)}</div></div>`;
-        inner += '<div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">';
-        block.items.forEach(it => {
-          inner += `<div style="padding:8px;border-radius:10px;background:rgba(255,255,255,0.01)">${escapeHtml(it)}</div>`;
+        // login
+        codeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const val = codeInput.value.trim();
+            if (val === ACCESS_CODE) {
+                localStorage.setItem('g59_unlocked', '1');
+                showApp();
+            } else {
+                alert('Yana bir marta harakat qilib koring.');
+                codeInput.value = '';
+            }
         });
-        inner += '</div>';
-        wrap.innerHTML = inner;
-        scheduleList.appendChild(wrap);
-      });
-    }
 
-    // render students
-    function loadStudents() {
-      studentsList.innerHTML = '';
-      sampleStudents.forEach(s => {
-        const r = document.createElement('div');
-        r.className = 'row';
-        r.innerHTML = `
+        if (localStorage.getItem('g59_unlocked')) {
+            showApp();
+        } else {
+            showLogin();
+        }
+
+        function showLogin() {
+            loginScreen.style.display = 'flex';
+            appScreen.style.display = 'none';
+            bottomNav.style.display = 'none';
+            lockIcon.textContent = '🔒';
+        }
+
+        function showApp() {
+            loginScreen.style.display = 'none';
+            appScreen.style.display = 'block';
+            bottomNav.style.display = 'flex';
+            lockIcon.textContent = '🔓';
+            renderAll();
+        }
+
+        // navigation
+        tabs.forEach(t => {
+            t.addEventListener('click', () => {
+                tabs.forEach(x => x.classList.remove('active'));
+                t.classList.add('active');
+                const which = t.dataset.tab;
+                showPage(which);
+            });
+        });
+
+        function showPage(which) {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            const el = document.getElementById('page-' + which);
+            if (el) el.style.display = 'block';
+            // scroll top
+            document.querySelector('.content').scrollTop = 0;
+        }
+
+        // --- NEW: цвета по дням недели (меняй если нужно) ---
+        const dayColors = {
+            1: '#149CF1', // Doshanba (понедельник)
+            2: '#FF6B6B', // Seshanba
+            3: '#4CAF50', // Chorshanba
+            4: '#9C27B0', // Payshanba
+            5: '#FFC107', // Juma
+            6: '#E91E63', // shanba
+            0: '#607D8B'  // yakshanba (если будет)
+        };
+
+        // helper: нормализуем название дня из sampleSchedule в номер (0..6)
+        function dayNameToNumber(name) {
+            if (!name) return null;
+            const n = name.toLowerCase();
+            if (n.includes('doshan')) return 1;
+            if (n.includes('seshan')) return 2;
+            if (n.includes('chorshan')) return 3;
+            if (n.includes('payshan')) return 4;
+            if (n.includes('juma')) return 5;
+            if (n.includes('shanba')) return 6;
+            if (n.includes('yakshan') || n.includes('yakshanba')) return 0;
+            return null;
+        }
+
+        // render schedule (updated to highlight today's day)
+        function loadSchedule() {
+            scheduleList.innerHTML = '';
+
+            // определяем текущий день (0 = Sunday, 1 = Monday, ...)
+            const today = new Date().getDay();
+            // цвет для сегодняшнего дня (если есть)
+            const todayColor = dayColors[today] || '#149CF1';
+
+            sampleSchedule.forEach(block => {
+                const wrap = document.createElement('div');
+                wrap.className = 'row';
+                wrap.style.flexDirection = 'column';
+
+                const blockDayNum = dayNameToNumber(block.day);
+
+                // если этот блок — сегодня, добавим класс и подчёркивание
+                const isToday = blockDayNum === today;
+                if (isToday) wrap.classList.add('today');
+
+                // заголовок дня — красим цветом, если сегодня
+                const headerColor = isToday ? todayColor : 'inherit';
+                // фон блока слегка затонируем, если сегодня
+                if (isToday) {
+                    // лёгкий акцентный фон (полупрозрачный)
+                    wrap.style.background = `linear-gradient(90deg, ${hexToRgba(todayColor, 0.10)}, rgba(255,255,255,0.02))`;
+                }
+
+                let inner = `<div style="display:flex;justify-content:space-between;align-items:center;width:100%"><div style="font-weight:700;color:${headerColor}">${escapeHtml(block.day)}</div></div>`;
+                inner += '<div style="margin-top:8px;display:flex;flex-direction:column;gap:6px">';
+
+                block.items.forEach(it => {
+                    // окрашиваем текст пары, если сегодня
+                    const itemColor = isToday ? todayColor : 'inherit';
+                    inner += `<div style="padding:8px;border-radius:10px;background:rgba(255,255,255,0.01);color:${itemColor}">${escapeHtml(it)}</div>`;
+                });
+
+                inner += '</div>';
+                wrap.innerHTML = inner;
+                scheduleList.appendChild(wrap);
+            });
+        }
+
+        // утилита: hex -> rgba с прозрачностью
+        function hexToRgba(hex, alpha = 1) {
+            if (!hex) return `rgba(0,0,0,${alpha})`;
+            const h = hex.replace('#','');
+            const bigint = parseInt(h.length === 3 ? h.split('').map(c => c+c).join('') : h, 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return `rgba(${r},${g},${b},${alpha})`;
+        }
+
+        // render students
+        function loadStudents() {
+            studentsList.innerHTML = '';
+            sampleStudents.forEach(s => {
+                const r = document.createElement('div');
+                r.className = 'row';
+                r.innerHTML = `
           <div class="avatar">${getInitials(s.name)}</div>
           <div class="meta">
             <div style="font-weight:700">${escapeHtml(s.name)}</div>
             <div class="muted">${escapeHtml(s.info)}</div>
           </div>
         `;
-        studentsList.appendChild(r);
-      });
-    }
-
-    // export JSON (вдруг пригодится)
-    downloadJsonBtn.addEventListener('click', () => {
-      const data = {
-        schedule: sampleSchedule, students: sampleStudents, author: {
-          name: 'Генри', info: 'IT, Blender, анимация'
+                studentsList.appendChild(r);
+            });
         }
-      };
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'group59-data.json';
-      a.click();
-      URL.revokeObjectURL(url);
-    });
 
-    // initial render
-    function renderAll() {
-      loadSchedule();
-      loadStudents();
-      showPage('schedule');
-      // if ты хочешь вставить фото прямо в файл: замени src строки ниже
-      // оставил пустым — показываем placeholder
-      // authorImgTag.src = 'path/to/your-photo.jpg'; authorImgTag.style.display='block'; authorPlaceholder.style.display='none';
-    }
+        // export JSON (вдруг пригодится)
+        downloadJsonBtn.addEventListener('click', () => {
+            const data = {
+                schedule: sampleSchedule, students: sampleStudents, author: {
+                    name: 'Генри', info: 'IT, Blender, анимация'
+                }
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'group59-data.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
 
-    // helpers
-    function escapeHtml(s) {
-      if (!s) return '';
-      return s.toString().replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
-    }
-    function getInitials(name) {
-      return name.split(' ').map(x => x[0] || '').slice(0, 2).join('').toUpperCase();
-    }
-    // small UX: press Enter to submit code
-    codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') codeForm.dispatchEvent(new Event('submit')); });
+        // initial render
+        function renderAll() {
+            loadSchedule();
+            loadStudents();
+            showPage('schedule');
+            // if ты хочешь вставить фото прямо в файл: замени src строки ниже
+            // оставил пустым — показываем placeholder
+            // authorImgTag.src = 'path/to/your-photo.jpg'; authorImgTag.style.display='block'; authorPlaceholder.style.display='none';
+        }
 
-    // replace Telegram href: поменяй значение href у #tgLink в HTML на свой тег
-    // replace author photo: найди в коде коммент и вставь src в authorImgTag
-  </script>
+        // helpers
+        function escapeHtml(s) {
+            if (!s) return '';
+            return s.toString().replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+        }
+        function getInitials(name) {
+            return name.split(' ').map(x => x[0] || '').slice(0, 2).join('').toUpperCase();
+        }
+        // small UX: press Enter to submit code
+        codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') codeForm.dispatchEvent(new Event('submit')); });
+
+        // replace Telegram href: поменяй значение href у #tgLink в HTML на свой тег
+        // replace author photo: найди в коде коммент и вставь src в authorImgTag
+    </script>
 </body>
 
-
 </html>
+
+
